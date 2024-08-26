@@ -1,0 +1,107 @@
+@startuml diagram
+
+class Vehiculo{
+    -String marca
+    #String placa
+    -String color
+    -String tipo
+    -String descripcion
+    +mover()
+}
+class Usuario{
+    #String id
+    -String nombre
+    -String apellido
+    -String tipo
+    -String email
+    -int telefono
+    -String rol 
+    -String foto
+    +Registrar()
+    +mostrar()
+    +Eliminar()
+}
+class Parqueadero{
+    -String num_cubiculos
+    -String area
+    -Horario horario
+    -String direccion
+    -String estado
+}
+class Cubilculo{
+    #String id 
+    -String estado
+    -String zona
+    -String tipo
+    -int numero
+    -double ancho 
+    -double largo
+    +ocupar()
+    +liberar()
+}
+class Funcionario{
+    -String apellido
+    -String tipo
+    -String email
+    -int telefono
+    -String rol 
+    #String foto
+    -String reserva
+    +reservar()
+    +eliminarReserva()
+}
+class Horario{
+    -String id
+    -String dia 
+    -String hora_i
+    -String hora_f
+}
+class Servicio{
+    -String id
+    -String fecha_e
+    -String fecha_s
+    -Usuario conductor
+    -Vehiculo vehiculo
+    -Guardia guardia_e
+    -Guardia guardia_s
+    -Cubilculo cubiculo
+    -Parqueadero parqueadero
+    -Tarifa tarifa
+    -String descripcion
+}
+class Guardia{
+    -String id
+    -String nombre
+    -String apellido
+    -String email
+    -String foto
+    -int telefono
+    -Turno turno
+    +revisar()
+    +ubicar()
+}
+class Turno{
+    -String id
+    -Horario Horario
+    -Guardia guardia
+    -String observacion
+    -Parqueadero parqueadero
+    -String cargo
+}
+class Tarifa{
+    -String id
+    -double valor
+    -String tipo
+    -String unidad
+    +asignar()
+}
+Funcionario-|>Usuario
+Guardia--|>Usuario
+Parqueadero"1"--*"1..*"Cubilculo
+Usuario--Servicio
+Tarifa--*Servicio
+Parqueadero--Servicio
+Usuario--Turno
+Parqueadero--Horario
+Usuario-Vehiculo
+@enduml
