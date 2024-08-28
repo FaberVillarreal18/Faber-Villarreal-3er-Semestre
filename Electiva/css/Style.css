@@ -1,0 +1,31 @@
+
+body{
+ font-family:Georgia, 'Times New Roman', Times, serif
+}
+header{
+ background-color:crimson;
+ padding: 20px;
+ text-align: center;
+ position: relative;
+}
+nav ul{
+ list-style: none;
+ padding: 0;
+}
+nav li{
+ display: inline-block;
+ margin: 0 10px;
+}
+main{
+ display: flex;
+ justify-content: space-between;
+}
+section{
+ flex: 1;
+ padding: 20px;
+ background-color: gray;
+}
+footer{
+ text-align:center;
+ padding: 20px;
+}

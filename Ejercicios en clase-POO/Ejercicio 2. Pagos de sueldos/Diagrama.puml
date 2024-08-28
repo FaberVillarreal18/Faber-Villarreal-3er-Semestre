@@ -1,0 +1,32 @@
+@startuml Diagrama
+class Empleado{
+    String DNI
+    String nombre
+    String apellidos
+    String teléfono
+    String dirección
+    String cargo
+    String num_cuenta
+}
+class Contrato{
+    String numero_c
+    String descripcion
+}
+class Firmado{
+    String fecha_alta
+    String fecha_baja
+    String categoria_asociada 
+    String puesto_destino
+}
+class Sueldo{
+    String descripcion
+    double cantidad
+} 
+class Empresa{
+    int num_empleados
+}
+Empleado--"1..."Contrato
+Empresa-"1..."Empleado
+Contrato<|---Firmado
+Empleado-Sueldo
+@enduml
