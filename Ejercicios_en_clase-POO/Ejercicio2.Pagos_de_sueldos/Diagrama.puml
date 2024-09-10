@@ -7,6 +7,8 @@ class Empleado{
     -String dirección
     -String cargo
     -String num_cuenta
+
+    +firmar()
 }
 class Contrato{
     -String numero_c
@@ -21,13 +23,28 @@ class Firmado{
 class Sueldo{
     -String descripcion
     -double cantidad
+
+    +asignar()
 } 
 class Empresa{
     -int num_empleados
 }
+class Sueldo_Base {
+    String periodo
+}
+class Deduccion {
+    -double porcentaje
+}
+class Devengo {
+    -String persepciones_salariales
+    -String  persepciones_no_salariales
+}
 
-Empleado"1"--"*"Contrato
-Empresa"1"-"*"Empleado
+Empleado"1"--"*"Contrato: tiene
+Empresa"1"-"*"Empleado: trabajan
 Contrato<|---Firmado
-Empleado"1"-"*"Sueldo
+Empleado"1"-"*"Sueldo: pago por servicio
+Sueldo"1"<|-"1"Sueldo_Base: pago fijo
+Sueldo"1"--"*"Deduccion: descuento
+Devengo"*"--"1"Sueldo: bonificación
 @enduml

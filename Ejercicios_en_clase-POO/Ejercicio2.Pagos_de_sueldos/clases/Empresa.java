@@ -7,7 +7,7 @@ public class Empresa {
     public int getnum_empleados(){
         return this.num_empleados;
     }
-    public void setnum_empleados(){
+    public void setnum_empleados(int num_empleados){
         this.num_empleados=num_empleados;
     } 
 }
