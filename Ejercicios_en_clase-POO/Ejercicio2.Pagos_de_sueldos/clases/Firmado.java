@@ -4,13 +4,19 @@ public class Firmado extends Contrato{
     private String categoria_asociada; 
     private String puesto_destino;
     
-    public Firmado(String numero_c, String descripcion, String fecha_alta, String fecha_baja, String categoria_asociada, String puesto_destino){
+    public Firmado(String categoria_asociada, String fecha_alta, String fecha_baja, String puesto_destino, String numero_c, String descripcion) {
         super(numero_c, descripcion);
-        this.fecha_alta=fecha_alta;
-        this.fecha_baja=fecha_baja;
-        this.categoria_asociada=categoria_asociada;
-        this.puesto_destino=puesto_destino;
+        this.categoria_asociada = categoria_asociada;
+        this.fecha_alta = fecha_alta;
+        this.fecha_baja = fecha_baja;
+        this.puesto_destino = puesto_destino;
     }
+
+    public Firmado(String numero_c, String descripcion) {
+        super(numero_c, descripcion);
+    }
+    
+  
 
     public String getFecha_alta() {
         return fecha_alta;
