@@ -1,8 +1,8 @@
-public class Animal{
+public class Animal2{
     protected String Sonido = "Hacer sonido";
 
-    public Animal(String nombre) {
-        //TODO Auto-generated constructor stub
+    public Animal2(String sonido) {
+        Sonido = sonido;
     }
 
     public void hacerSonido(){

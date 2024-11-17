@@ -4,7 +4,7 @@ public abstract class Animal {
     public Animal(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public String getNombre() {
         return nombre;
     }

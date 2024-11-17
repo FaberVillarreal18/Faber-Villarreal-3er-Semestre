@@ -1,6 +1,6 @@
-public class paloma extends Aves {
+public class Alcon extends Aves {
     @Override
     public void volar(){
-        System.out.println("La paloma vuela");
+        System.out.println("El Alcon vuela");
     }
 }
